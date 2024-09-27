@@ -1,1 +1,19 @@
-<p id="title_hero">hero works!</p>
+<h2 id="title_hero">Perfil del Heroe</h2>
+
+ <dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{age}}</dd>
+
+  <td>Método:</td>
+  <dd>Algún método</dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{captName}}</dd>
+ </dl>
+
+ <button (click)="printName('papa fritas')" class="btn btn-primary">Cambiar nombre</button>
+ <button (click)="printName('Coca Cola')" class="btn btn-primary">Cambiar edad</button>
+

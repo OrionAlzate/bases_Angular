@@ -1,3 +1,13 @@
 #title_hero{
-  margin:10px;
+  font-size: 50px;
+}
+
+button{
+  /* border: 1px solid #98eb34; */
+  margin-right: 10px ;
+}
+
+dd {
+  font-size: 30px;
+  font-weight: bold;
 }
