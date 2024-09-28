@@ -1,1 +1,21 @@
-<p>list works!</p>
+<h3>Listado de heroes</h3>
+
+<ul class="mt-2 list-group">
+  <!-- <li class="list-group-item">spiderman</li>
+  <li class="list-group-item">Thor</li>
+  <li class="list-group-item">Iron Man</li> -->
+  <!-- <li class="list-group-item">Capitan America</li> -->
+  <li *ngFor=" let hero of heroesList "  class="list-group-item">{{ hero }}</li>
+
+
+  <div id="btn_container" class="btn-group mt-3">
+    <button type="button" class="btn btn-primary me-2" (click)="addHero()">Agregar Heroe</button>
+    <button type="button" class="btn btn-danger me-2" (click)="deleteHero()">Eliminar Ultimo Heroe</button>
+  </div>
+
+
+  <h4 class="mt-3">Heroe Agregado/Eliminado:<small> xxxxx </small></h4>
+
+</ul>
+
+

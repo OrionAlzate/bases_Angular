@@ -2,3 +2,6 @@ p
 {
   margin :10px;
 }
+#btn_container > button{
+  max-width:200px !important;
+}

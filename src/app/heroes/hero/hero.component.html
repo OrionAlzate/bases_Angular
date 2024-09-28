@@ -1,19 +1,20 @@
-<h2 id="title_hero">Perfil del Heroe</h2>
+<h1 id="title_hero">Perfil del Heroe</h1>
 
  <dl>
   <td>Nombre:</td>
-  <dd>{{name}}</dd>
+  <dd>{{ name }}</dd>
 
   <td>Edad:</td>
-  <dd>{{age}}</dd>
+  <dd>{{ age }}</dd>
 
   <td>Método:</td>
-  <dd>Algún método</dd>
+  <dd>{{ heroDescription }}</dd>
 
   <td>Capitalizado:</td>
-  <dd>{{captName}}</dd>
+  <dd>{{ captName }}</dd>
  </dl>
 
- <button (click)="printName('papa fritas')" class="btn btn-primary">Cambiar nombre</button>
- <button (click)="printName('Coca Cola')" class="btn btn-primary">Cambiar edad</button>
+ <button *ngIf=" name !== updatedName" (click)="changeHero()" class="btn btn-primary">Cambiar nombre</button>
+ <button *ngIf=" age !== updatedAge" (click)="changeAge()" class="btn btn-primary">Cambiar edad</button>
+ <button *ngIf=" age === updatedAge || name === updatedName" (click)="changeForm()" class="btn btn-primary">Reset</button>
 
