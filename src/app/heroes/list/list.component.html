@@ -5,16 +5,23 @@
   <li class="list-group-item">Thor</li>
   <li class="list-group-item">Iron Man</li> -->
   <!-- <li class="list-group-item">Capitan America</li> -->
-  <li *ngFor=" let hero of heroesList "  class="list-group-item">{{ hero }}</li>
+  <li  *ngFor=" let hero of heroesList "  class="list-group-item">{{ hero }}</li>
 
 
   <div id="btn_container" class="btn-group mt-3">
     <button type="button" class="btn btn-primary me-2" (click)="addHero()">Agregar Heroe</button>
-    <button type="button" class="btn btn-danger me-2" (click)="deleteHero()">Eliminar Ultimo Heroe</button>
+    <button *ngIf=" heroesList.length > 0 " type="button" class="btn btn-danger me-2" (click)="deleteLastHero()">Eliminar Ultimo Heroe</button>
   </div>
 
 
-  <h4 class="mt-3">Heroe Agregado/Eliminado:<small id="updatedHeroStatus"> {{ heroDeleted || "xxxx" }} </small></h4>
+  <div *ngIf="deletedHero ; else showAnotherThing">
+    <h4  class="mt-3">Heroe Agregado/Eliminado:<small id="updatedHeroStatus"> {{ heroDeleted || "xxxx" }} </small></h4>
+  </div>
+
+  <ng-template #showAnotherThing>
+    <br>
+    <h4>Sin heroes eliminados aún</h4>
+  </ng-template>
 
 </ul>
 

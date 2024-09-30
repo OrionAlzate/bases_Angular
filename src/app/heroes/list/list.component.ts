@@ -9,27 +9,33 @@ export class ListComponent {
 
   public heroesList : string[] = ['Spiderman', 'Ironman', 'Scartlett Witch', 'Hulk', 'Thor', 'Mario Bros']
 
-  public deletedHero : string = "";
+  public deletedHero? : string;
+  public heroAdded? : string;
+
   addHero() : void {
 
-    let heroAdded : string | null = prompt('Ingrese el nombre de un Heroe', 'Deadpool') ;
+    let PromptHeroAdded : string | null = prompt('Ingrese el nombre de un Heroe', 'Deadpool') ;
     // let elementHtml  : string = document.getElementById('hero_input')!.innerHTML;
-    if (heroAdded != null){
+    if (PromptHeroAdded != null){
       // elementHtml = ``
-      this.heroesList.push(heroAdded);
+      this.heroesList.push(PromptHeroAdded);
+      this.heroAdded = PromptHeroAdded;
     }
 
   }
 
-  deleteHero() : void {
+  deleteLastHero() : void {
 
-    if(this.heroesList.length > 0 ){
-      this.deletedHero = this.heroesList.pop()!;
-    }
+    this.deletedHero = this.heroesList.pop();
+
   }
 
   get heroDeleted(){
     return this.deletedHero;
+  }
+
+  get lastHeroAdded(){
+    return this.heroAdded;
   }
 
 }
