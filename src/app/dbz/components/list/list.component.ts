@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
@@ -9,6 +9,9 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class DBZListComponent {
 
+  @Output()
+  public indexCharacterEmiter : EventEmitter<number> = new EventEmitter();
+
   @Input()
   public characterList : Character[] = [
     {
@@ -16,5 +19,10 @@ export class DBZListComponent {
       power: 10
     }
   ]
+
+  onDeleteCharacter (index : number) : void {
+    // console.log(index)
+    this.indexCharacterEmiter.emit(index)
+  }
 
  }

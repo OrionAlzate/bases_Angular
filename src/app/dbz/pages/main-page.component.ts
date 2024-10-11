@@ -19,4 +19,21 @@ export class MainPageComponent {
     name: 'Vegeta',
     power: 7500
   }]
+
+  onNewCharacter(character: Character):void{
+    // debugger;
+    let characterGetted : Character = character
+
+
+    console.log("Main Page")
+    console.log(character)
+    console.log(this.characters)
+    this.characters.push(characterGetted)
+  }
+
+  onDeleteCharacter(index : number) :void {
+    this.characters.splice(index, 1)
+  }
+
+
 }
