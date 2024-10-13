@@ -4,11 +4,11 @@
   <!-- <li class="list-group-item">Gokú - 10000</li> -->
   <li *ngFor="
     let character of characterList;
-    let i = index,
+    let i = index;
     let isFirst = first;
     let isLast = last;
     let isEven = even;
-    let isOdd = odd"
+    let isOdd = odd;"
     class="list-group-item d-flex justify-content-between align-items-center"
     [ngClass]="{
       'list-group-item-danger': isLast,
@@ -37,7 +37,8 @@
     <span> - Es par: {{ isEven }}</span><br>
     <span> - Es impar: {{ isOdd }}</span><br> -->
 
-    <button class="btn btn-danger" (click)="onDeleteCharacter(i)">X</button>
+    <!-- <button class="btn btn-danger" (click)="onDeleteCharacter(i)">X</button> -->
+    <button class="btn btn-danger" (click)="onDeleteCharacter( character.id )">X</button>
 
   </li>
 </ul>

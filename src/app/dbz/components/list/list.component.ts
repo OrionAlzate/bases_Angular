@@ -10,7 +10,7 @@ import { Character } from '../../interfaces/character.interface';
 export class DBZListComponent {
 
   @Output()
-  public indexCharacterEmiter : EventEmitter<number> = new EventEmitter();
+  public onDeleteEmiter : EventEmitter< string > = new EventEmitter();
 
   @Input()
   public characterList : Character[] = [
@@ -20,9 +20,12 @@ export class DBZListComponent {
     }
   ]
 
-  onDeleteCharacter (index : number) : void {
-    // console.log(index)
-    this.indexCharacterEmiter.emit(index)
+  onDeleteCharacter ( id? : string) : void {
+
+    if (!id) return;
+
+    // console.log(id);
+    this.onDeleteEmiter.emit(id);
   }
 
  }
